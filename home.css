@@ -1,4 +1,4 @@
-/* style guide recommand 
+/* style guide recommend 
 1rem = 10px
 
 for mobile 
@@ -8,6 +8,8 @@ info, font-size: 1.4rem, line-height: 1.6em
 for desktop 
 title, font-size: 3rem, line-height: 1.4em
 info, font-size: 2rem, line-height: 1.6em
+
+most of the case follow this guide, some of the special cases can omit it.
 
 */
 
@@ -207,4 +209,17 @@ info, font-size: 2rem, line-height: 1.6em
     font-size: 2rem;
     line-height: 1.6em;
   }
+}
+
+/* our products section styles */
+.ourProducts-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.ourProducts-right {
+  display: flex;
+}
+.ourProducts-item-buyBtn {
+  display: inline-block;
+  margin-bottom: 2rem;
 }

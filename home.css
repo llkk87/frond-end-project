@@ -7,10 +7,10 @@
   flex-direction: column-reverse;
   gap: 4rem;
 }
-.hero-left-wrapper {
+.hero-left {
   max-width: 350px;
 }
-.hero-right-wrapper {
+.hero-right {
   max-width: 400px;
   width: 80%;
   margin: 0 auto;

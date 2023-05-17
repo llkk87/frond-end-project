@@ -1,0 +1,90 @@
+/* global button styles */
+.btn {
+  color: var(--green-1);
+  font-family: Poppins;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  padding: 1.2rem 2rem;
+}
+.btn-withoutStyles {
+  color: var(--green-1);
+  font-family: Poppins;
+  border-radius: 8px;
+}
+.btn-primary {
+  color: var(--white-1);
+  background: var(--green-1);
+}
+
+/* nav styles */
+.nav {
+  padding: 2rem 0;
+}
+.nav-wrapper {
+}
+.nav-list-wrapper {
+}
+.logo {
+  padding-right: 3rem;
+}
+.nav-icon,
+.nav-close,
+.nav-bgOverlay {
+  display: none;
+}
+
+.nav-list li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+.nav-list li a {
+  font-size: 1.8rem;
+  font-family: Poppins;
+  color: var(--black-2);
+  padding: 0.5rem;
+}
+
+.login,
+.sign-up {
+  font-size: 1.8rem;
+  font-family: Poppins;
+  cursor: pointer;
+}
+.shopping-cart {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.shopping-cart svg {
+  color: var(--black-2);
+}
+.nav-list-left li:hover a:hover {
+  color: var(--green-1);
+}
+.nav .logo {
+  height: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .nav {
+    position: relative;
+  }
+  .nav-icon,
+  .nav-list-left li,
+  .nav-list-right li {
+    display: block;
+  }
+  .nav-icon svg,
+  .nav-close svg {
+    pointer-events: none;
+    height: 30px;
+    width: 30px;
+  }
+  .nav-close {
+    display: block;
+    position: absolute;
+    color: var(--black-1);
+    right: 2.5rem;
+    top: 2.5rem;
+    cursor: pointer;
+  }
+}

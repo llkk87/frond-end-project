@@ -50,7 +50,7 @@
     flex: 4;
   } */
   .hero-right {
-    margin-right: 40px;
+    margin-right: 0;
   }
   .hero-heading {
     font-size: 3.6rem;
@@ -75,12 +75,13 @@
     padding-bottom: 90px;
   }
 }
-/* @media only screen and (max-width: 900px) {
-  .hero__left,
+@media only screen and (max-width: 900px) {
   .hero__right {
-    flex: 1;
+    .hero-right {
+      margin-right: 30px;
+    }
   }
-} */
+}
 
 /* testimonial section styles */
 .testimonial-title {

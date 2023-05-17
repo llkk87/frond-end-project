@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Raleway:wght@400;500;600&display=swap");
 
 html {
+  /*↓ 10px so that 1rem = 10px, 1.5rem = 15px ...... ↓  */
   font-size: 10px;
   overflow-x: hidden;
 }

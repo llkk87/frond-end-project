@@ -1,0 +1,67 @@
+/* hero section styles*/
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* left-col in down and right-col in up for mobile ↓ */
+  flex-direction: column-reverse;
+  gap: 4rem;
+}
+.hero-left-wrapper {
+  max-width: 350px;
+}
+.hero-right-wrapper {
+  max-width: 400px;
+  width: 80%;
+  margin: 0 auto;
+}
+.hero-heading {
+  font-weight: 600;
+  text-transform: uppercase;
+  /* use em instead of rem for line-height ↓ , the em depends on the element font size */
+  line-height: 1.6em;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--black-1);
+}
+.hero-info {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--black-2);
+  line-height: 1.5em;
+}
+.button-wrapper {
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .hero-wrapper {
+    flex-direction: row;
+    gap: 0;
+  }
+  .hero-left {
+    flex: 3;
+  }
+  .hero-right {
+    flex: 4;
+  }
+  .hero-heading {
+    font-size: 3.6rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+  .hero-info {
+    margin-bottom: 3rem;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1.5em;
+  }
+  .button-wrapper {
+    text-align: left;
+  }
+  .hero-imgWrapper {
+    max-width: none;
+    width: 90%;
+  }
+}

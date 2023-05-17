@@ -22,13 +22,13 @@
   line-height: 1.6em;
   text-align: center;
   font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--black-1);
 }
 .hero-info {
   text-align: center;
   font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--black-2);
   line-height: 1.5em;
 }
@@ -42,14 +42,15 @@
   .hero-wrapper {
     flex-direction: row;
     gap: 1.5rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
-  .hero-left {
+  /* .hero-left {
     flex: 4;
   }
   .hero-right {
     flex: 4;
+  } */
+  .hero-right {
+    margin-right: 40px;
   }
   .hero-heading {
     font-size: 3.6rem;
@@ -67,12 +68,19 @@
   }
   .hero-imgWrapper {
     max-width: none;
+    text-align: right;
     /* width: 90%; */
   }
   #hero {
     padding-bottom: 90px;
   }
 }
+/* @media only screen and (max-width: 900px) {
+  .hero__left,
+  .hero__right {
+    flex: 1;
+  }
+} */
 
 /* testimonial section styles */
 .testimonial-title {

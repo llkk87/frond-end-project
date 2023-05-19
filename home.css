@@ -186,6 +186,7 @@ most of the case follow this guide, some of the special cases can omit it.
 .descOne-info {
   font-size: 1.4rem;
   line-height: 1.6em;
+  color: var(--black-2);
 }
 @media only screen and (min-width: 768px) {
   .descOne-wrapper {

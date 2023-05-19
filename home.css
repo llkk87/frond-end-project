@@ -214,12 +214,112 @@ most of the case follow this guide, some of the special cases can omit it.
 /* our products section styles */
 .ourProducts-wrapper {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+}
+.ourProducts-title {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+  margin-bottom: 2rem;
+  color: var(--black-1);
+}
+.ourProducts-info {
+  font-size: 1.4rem;
+  line-height: 1.6em;
+  margin-bottom: 2rem;
+  color: var(--black-2);
+}
+.ourProducts-moreProductsBtn {
+  margin-bottom: 2rem;
 }
 .ourProducts-right {
   display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+}
+.ourProducts-item {
+  background-color: var(--lightGreen-1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+.ourProducts-item-img {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.ourProducts-item-img img {
+  object-fit: cover;
+}
+.ourProducts-item-title {
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  color: var(--black-1);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.ourProducts-item-price {
+  color: var(--green-1);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.ourProducts-item-stars {
+  height: 1.5rem;
+  width: max-content;
+  margin-bottom: 1rem;
+}
+.ourProducts-item-info {
+  font-size: 1.4rem;
+  color: var(--black-2);
+  margin-bottom: 1.5rem;
+}
+.ourProducts-item-buyBtnWrapper {
+  display: flex;
+  justify-content: center;
 }
 .ourProducts-item-buyBtn {
   display: inline-block;
-  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .ourProducts-wrapper {
+    flex-direction: row;
+    align-items: center;
+    max-width: 900px;
+    gap: 3rem;
+    margin: 0 auto;
+  }
+  .ourProducts-left {
+    flex: 2;
+  }
+  .ourProducts-right {
+    flex: 4;
+    gap: 2rem;
+  }
+  .ourProducts-title {
+    font-size: 3.6rem;
+    line-height: 1.4em;
+    margin-bottom: 2.5rem;
+  }
+  .ourProducts-info {
+    font-size: 2rem;
+    line-height: 1.6em;
+  }
+  .ourProducts-item {
+    padding: 2rem;
+  }
+  .ourProducts-item-title {
+    font-size: 2.4rem;
+    line-height: 1.4em;
+    margin-bottom: 1.5rem;
+  }
+  .ourProducts-item-price {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .ourProducts-item-stars {
+    margin-bottom: 2rem;
+  }
+  .ourProducts-item-info {
+    font-size: 1.8rem;
+    line-height: 1.6em;
+  }
 }

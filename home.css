@@ -285,7 +285,8 @@ most of the case follow this guide, some of the special cases can omit it.
     align-items: center;
     max-width: 900px;
     gap: 3rem;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .ourProducts-left {
     flex: 2;

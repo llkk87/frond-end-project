@@ -27,12 +27,17 @@
 .nav {
   padding: 2rem 0;
 }
-.nav-wrapper {
-}
 .nav-list-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.logo {
-  padding-right: 3rem;
+.logo-mobile {
+  display: none;
+}
+.logo-desktop {
+  display: inline-block;
+  margin-right: 2rem;
 }
 .nav-icon,
 .nav-close,
@@ -50,6 +55,11 @@
   color: var(--black-2);
   padding: 0.5rem;
 }
+/* .shopping-cart-onTheLeft,
+.login-onTheLeft,
+.sign-up-onTheLeft {
+  display: none;
+} */
 
 .login,
 .sign-up {
@@ -57,12 +67,20 @@
   font-family: Poppins;
   cursor: pointer;
 }
+/* .sign-up {
+  padding-right: 1.5rem;
+} */
 .shopping-cart {
   margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin-right: 3.5rem;
+  font-size: 2rem;
+  position: relative;
 }
 .shopping-cart svg {
   color: var(--black-2);
+  position: absolute;
+  /* bottom: -0.5rem; */
+  top: -0.8rem;
 }
 .nav-list-left li:hover a:hover {
   color: var(--green-1);
@@ -70,18 +88,25 @@
 .nav .logo {
   height: 50px;
 }
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+}
 @media only screen and (max-width: 768px) {
   .nav {
     position: relative;
   }
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
   .nav-icon,
-  .nav-list-left li,
-  .nav-list-right li {
+  .nav-list-wrapper,
+  .nav-list-wrapper-left li,
+  .nav-list-wrapper-right li {
     display: block;
   }
   .nav-icon svg,
   .nav-close svg {
-    pointer-events: none;
+    /* pointer-events: none; */
     height: 30px;
     width: 30px;
   }
@@ -92,5 +117,161 @@
     right: 2.5rem;
     top: 2.5rem;
     cursor: pointer;
+  }
+  .logo-mobile {
+    display: inline-block;
+  }
+  .logo-desktop {
+    display: none;
+  }
+  .nav-list {
+    z-index: 1000;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    background: var(--lightGreen-1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    transform: translate(0%);
+    overflow: hidden;
+    transition: 0.3s ease-in transform;
+  }
+  .nav-list.show {
+    transform: translate(-100%);
+  }
+  .nav-list li {
+    display: block;
+    text-align: right;
+    margin-bottom: 2rem;
+  }
+  .nav-list li a {
+    font-size: 2rem;
+  }
+  .nav-bgOverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+    width: 100%;
+    background: rgba(18, 24, 14, 0.808);
+    display: none;
+  }
+  .nav-bgOverlay.active {
+    display: block;
+  }
+  .login,
+  .sign-up {
+    display: inline-block;
+  }
+  .login {
+    margin-top: 2rem;
+  }
+  .shopping-cart {
+    display: none;
+  }
+  .sign-up {
+    padding-right: 1rem;
+  }
+}
+
+/* footer styles */
+footer {
+  background-color: var(--lightGreen-1);
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.footer-logo {
+  width: 150px;
+  margin-bottom: 2rem;
+}
+.footer-info {
+  font-size: 1.4rem;
+  color: var(--black-2);
+  margin-bottom: 2rem;
+}
+.footer-social-title {
+  font-size: 1.6rem;
+  color: var(--black-1);
+  margin-bottom: 1rem;
+}
+.footer-social li {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.footer-social a {
+  padding: 0.5rem 0.8rem;
+  background-color: var(--white-1);
+  border: 1px solid var(--green-2);
+  border-radius: 8px;
+}
+.footer-social svg {
+  width: 20px;
+  color: var(--black-2);
+}
+.footer-text-title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--black-1);
+  font-weight: 600;
+}
+.footer-text a {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--black-2);
+  font-family: Raleway;
+  font-weight: 500;
+  line-height: 2rem;
+}
+.copyright-text {
+  font-size: 1.3rem;
+  margin-top: 1.4em;
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+  .footer-wrapper {
+    flex-direction: row;
+  }
+  .footer-col-1 {
+    flex: 4;
+  }
+  .footer-col-2,
+  .footer-col-3,
+  .footer-col-4 {
+    flex: 2;
+  }
+  .footer-info {
+    max-width: 300px;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  .footer-social-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer-text-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-text a {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .copyright-text {
+    margin-top: 3.5rem;
+    font-size: 1.6rem;
+    color: var(--black-2);
   }
 }

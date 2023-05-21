@@ -75,7 +75,7 @@
   padding-right: 1.5rem;
 } */
 .shopping-cart {
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   position: relative;
 }
 .shpping-cart-textVersion {
@@ -236,6 +236,7 @@
   }
   .login {
     margin-top: 2rem;
+    font-size: 2rem;
   }
   .shopping-cart {
     display: none;

@@ -446,3 +446,16 @@ footer {
     margin: 1rem 0;
   }
 }
+
+/* please login section styles */
+.pleaseLogin-wrapper {
+  font-size: 1.8rem;
+  color: var(--black-1);
+  margin: 5rem 0;
+}
+.pleaseLogin-wrapper a {
+  font-size: 1.8rem;
+  color: var(--black-2);
+  text-decoration: underline;
+  margin: 0.5rem;
+}

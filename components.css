@@ -53,7 +53,7 @@
   display: inline-block;
   margin: 0 1rem;
 }
-.nav-list li a {
+.nav-list-wrapper-left li a {
   font-size: 1.8rem;
   font-family: Poppins;
   color: var(--black-2);
@@ -65,12 +65,12 @@
   display: none;
 } */
 
-.login,
+/* .login,
 .sign-up {
   font-size: 1.8rem;
   font-family: Poppins;
   cursor: pointer;
-}
+} */
 /* .sign-up {
   padding-right: 1.5rem;
 } */
@@ -85,7 +85,7 @@
   color: var(--black-2);
   position: absolute;
   /* bottom: -0.5rem; */
-  top: -0.8rem;
+  top: -1.8rem;
 }
 .nav-list-left li:hover a:hover {
   color: var(--green-1);
@@ -93,10 +93,18 @@
 .nav .logo {
   height: 50px;
 }
+.login a {
+  color: var(--green-1);
+  font-family: Poppins;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 2rem;
+  padding: 1.2rem 2.5rem;
+}
 .loginOrSignUp {
   display: none;
 }
-@media only screen and (min-width: 775px) and (max-width: 1010px) {
+@media only screen and (min-width: 775px) and (max-width: 1025px) {
   /* .nav-list-wrapper {
     display: block;
   }
@@ -187,7 +195,7 @@
     left: 100%;
     top: 0;
     height: 100vh;
-    width: 80%;
+    width: 70%;
     background: var(--lightGreen-1);
     display: flex;
     align-items: center;
@@ -207,6 +215,7 @@
   }
   .nav-list li a {
     font-size: 2rem;
+    font-family: Poppins;
   }
   .nav-bgOverlay {
     position: absolute;
@@ -233,9 +242,39 @@
   }
   .shpping-cart-textVersion {
     display: inline-block;
+    color: var(--black-1);
+    margin-right: 0.5rem;
   }
   .sign-up {
     padding-right: 1rem;
+    font-size: 2rem;
+  }
+}
+
+/* description section styles */
+.desc-title {
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--black-1);
+}
+.desc-info {
+  font-size: 1.6rem;
+  line-height: 1.8em;
+  text-align: center;
+  color: var(--black-1);
+}
+@media only screen and (min-width: 768px) {
+  .desc-title {
+    font-size: 3.6rem;
+    line-height: 1.4em;
+    margin-bottom: 2rem;
+  }
+  .desc-info {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -334,5 +373,75 @@ footer {
     margin-top: 3.5rem;
     font-size: 1.6rem;
     color: var(--black-2);
+  }
+}
+
+/* login section styles */
+#login {
+  padding-top: 0;
+}
+.login-wrapper {
+  background-color: var(--lightGreen-1);
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-group {
+  font-size: 1.6rem;
+  font-family: Poppins;
+  color: var(--black-2);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  border: none;
+  background-color: whitesmoke;
+  font-size: 1.4rem;
+  font-family: Raleway;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  color: var(--black-2);
+}
+.forgetPassword-link,
+.signup-link,
+.forgetPassword-link a,
+.signup-link a {
+  font-size: 1.6rem;
+  font-family: Poppins;
+  color: var(--black-2);
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.loginBtn {
+  border: none;
+  display: block;
+  margin-bottom: 1.8rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 768px) {
+  .login-wrapper {
+    padding: 3.5rem;
+  }
+  .form-group {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  .form-group:label {
+    margin-bottom: 10rem;
+  }
+  .forgetPassword-link,
+  .signup-link,
+  .forgetPassword-link a,
+  .signup-link a {
+    font-size: 1.8rem;
+    margin: 1rem 0;
   }
 }

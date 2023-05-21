@@ -16,7 +16,7 @@
   color: var(--white-1);
   background: var(--green-1);
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 776px) {
   .btn {
     font-size: 1.4rem;
     padding: 1.2rem 2rem;
@@ -38,6 +38,10 @@
 .logo-desktop {
   display: inline-block;
   margin-right: 2rem;
+  height: 5rem;
+}
+.logo-desktop img {
+  border-radius: 8px;
 }
 .nav-icon,
 .nav-close,
@@ -71,10 +75,11 @@
   padding-right: 1.5rem;
 } */
 .shopping-cart {
-  margin-left: 1.5rem;
-  margin-right: 3.5rem;
-  font-size: 2rem;
+  margin-right: 2rem;
   position: relative;
+}
+.shpping-cart-textVersion {
+  display: none;
 }
 .shopping-cart svg {
   color: var(--black-2);
@@ -88,9 +93,61 @@
 .nav .logo {
   height: 50px;
 }
-@media only screen and (min-width: 769px) and (max-width: 1000px) {
+.loginOrSignUp {
+  display: none;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 775px) and (max-width: 1010px) {
+  /* .nav-list-wrapper {
+    display: block;
+  }
+  .nav-list-wrapper-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-list-wrapper-right {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .nav-list-wrapper-right li {
+    display: flex;
+    align-items: center;
+  }
+  .shopping-cart {
+    display: none;
+  }
+  .shpping-cart-textVersion {
+    display: inline-block; */
+  .nav-list li {
+    margin: 0 0.5rem;
+  }
+  .nav-list li a {
+    font-size: 1.6rem;
+  }
+  .logo-desktop {
+    margin-right: 1rem;
+  }
+  .login,
+  .sign-up {
+    font-size: 1.6rem;
+  }
+  .shopping-cart {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    font-size: 0rem;
+  }
+  .login,
+  .sign-up {
+    display: none;
+  }
+  .loginOrSignUp {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 1.1rem 1.4rem;
+  }
+}
+@media only screen and (max-width: 775px) {
   .nav {
     position: relative;
   }
@@ -173,6 +230,9 @@
   }
   .shopping-cart {
     display: none;
+  }
+  .shpping-cart-textVersion {
+    display: inline-block;
   }
   .sign-up {
     padding-right: 1rem;

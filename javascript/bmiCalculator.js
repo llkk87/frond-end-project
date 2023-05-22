@@ -1,3 +1,4 @@
+// bmi calculator script
 const calcBtnEl = document.querySelector("#calculate");
 
 calcBMI = function () {
@@ -19,16 +20,33 @@ calcBMI = function () {
 
   document.querySelector("#result").innerHTML = BMI;
 
+  function removeUnderline() {
+    document.querySelector(".resultUnderweight").style.textDecoration = "none";
+    document.querySelector(".resultHealthy").style.textDecoration = "none";
+    document.querySelector(".resultOverwegiht").style.textDecoration = "none";
+    document.querySelector(".resultObese").style.textDecoration = "none";
+  }
+
   let status = "";
 
   if (BMI < 18.5) {
+    removeUnderline();
     status = "Underweight";
+    document.querySelector(".resultUnderweight").style.textDecoration =
+      "underline";
   } else if (BMI >= 18.5 && BMI < 25) {
+    removeUnderline();
     status = "Heatlhy";
+    document.querySelector(".resultHealthy").style.textDecoration = "underline";
   } else if (BMI >= 25 && BMI < 30) {
+    removeUnderline();
     status = "Overweight";
+    document.querySelector(".resultOverwegiht").style.textDecoration =
+      "underline";
   } else if (BMI >= 30) {
+    removeUnderline();
     status = "Obese";
+    document.querySelector(".resultObese").style.textDecoration = "underline";
   }
 
   document.querySelector(

@@ -383,16 +383,23 @@ footer {
   }
 }
 
-/* login section styles */
+/* from or login section styles */
 #login {
   padding-top: 0;
 }
+#form {
+  padding-top: 0;
+}
+.form-wrapper,
 .login-wrapper {
   background-color: var(--lightGreen-1);
   border-radius: 12px;
   padding: 2.5rem;
   max-width: 600px;
   margin: 0 auto;
+}
+.form-wrapper {
+  max-width: 700px;
 }
 .form-group {
   font-size: 1.6rem;
@@ -425,7 +432,8 @@ footer {
   font-weight: 500;
   margin: 0.5rem 0;
 }
-.loginBtn {
+.loginBtn,
+.submitBtn {
   border: none;
   display: block;
   margin-bottom: 1.8rem;

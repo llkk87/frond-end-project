@@ -5,12 +5,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apps | Health Wizard</title>
+  <title>Health Video Player | Health Wizard</title>
   <!-- custom css -->
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/globalStyles.css" />
   <link rel="stylesheet" href="./styles/components.css" />
   <link rel="stylesheet" href="./styles/apps.css" />
+  <!-- aos css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -84,13 +86,16 @@
               </div>
               <div class="nav-list-wrapper-right">
                 <li>
-                  <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
-                      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                    </svg></a>
+                  <div class="shoppingCartOverlay"></div>
+                  <div class="shoppingCart-div">
+                    <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                      </svg></a>
+                  </div>
                 </li>
                 <li>
                   <a class="shpping-cart-textVersion shopping-cart-onTheRight" href="./shopping-cart.html">My Cart</a>
@@ -118,100 +123,28 @@
   <!-- end nav section -->
 
   <!-- description section -->
-  <section id="desc">
+  <section id="title">
     <div class="container">
-      <h1 class="desc-title">Health Wizard Apps</h1>
-      <p class="desc-info">
-        Use them every single day. Keeps your life from fading away.
-      </p>
+      <h1 class="desc-title">Health Video Player</h1>
     </div>
   </section>
   <!-- end description section -->
 
-  <!-- apps section  -->
-  <section id="apps">
+  <!-- video player section -->
+  <section id="vidPlayer">
     <div class="container">
-      <div class="apps-wrapper">
-        <a href="./apps-bmi-calculator.html" class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">BMI Calculator</h3>
-            <p class="apps-item-info-desc">
-              a simple tool that calculates your body mass index based on your height and weight, providing insight into
-              your overall health status.
-            </p>
-          </div>
-        </a>
-
-        <a href="./apps-health-video-player.html" class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Health Video Player</h3>
-            <p class="apps-item-info-desc">
-              A video guide to help you live a healthier lifestyle.
-            </p>
-          </div>
-        </a>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Diet Habit Measure</h3>
-            <p class="apps-item-info-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-              aliquam praesentium vitae aperiam beatae sapiente totam nemo.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">BMI Calculator</h3>
-            <p class="apps-item-info-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-              aliquam praesentium vitae aperiam beatae sapiente totam nemo.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">BMI Calculator</h3>
-            <p class="apps-item-info-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-              aliquam praesentium vitae aperiam beatae sapiente totam nemo.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">BMI Calculator</h3>
-            <p class="apps-item-info-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-              aliquam praesentium vitae aperiam beatae sapiente totam nemo.
-            </p>
-          </div>
+      <div class="vidPlayer-wrapper">
+        <div class="vidPlayer-vid-1">
+          <video width="640" controls>
+            <source src="./images/health-video.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
         </div>
       </div>
+      <p class="apps-goBack"><a href="./apps.html">Back to Health Wizard Apps</a></p>
     </div>
   </section>
-  <!-- end apps section -->
+  <!-- end video player section -->
 
   <!-- footer -->
   <footer>
@@ -313,8 +246,11 @@
   </footer>
   <!-- end footer -->
 
+  <!-- aos script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- custom script -->
   <script src="./javascript/main.js"></script>
+  <script src="./javascript/bmiCalculator.js"></script>
 </body>
 
 </html>

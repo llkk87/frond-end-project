@@ -198,4 +198,13 @@ p {
   .calc-result {
     font-size: 2.4rem;
   }
+
+  .apps-goBack {
+    margin-top: 10rem;
+  }
+}
+
+/* health video palyer styles */
+.vidPlayer-wrapper {
+  text-align: center;
 }

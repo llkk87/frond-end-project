@@ -6,7 +6,7 @@ calcBMI = function () {
   let weight = document.querySelector("#weight").value;
 
   if (height == "" || weight == "") {
-    alert("Please fill out the output fields!");
+    alert("Please fill out the output fields in appropriate way!");
     return;
   }
 

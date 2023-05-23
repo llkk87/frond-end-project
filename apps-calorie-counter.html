@@ -5,12 +5,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apps | Health Wizard</title>
+  <title>Health Video Player | Health Wizard</title>
   <!-- custom css -->
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/globalStyles.css" />
   <link rel="stylesheet" href="./styles/components.css" />
   <link rel="stylesheet" href="./styles/apps.css" />
+  <!-- aos css -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -84,13 +86,16 @@
               </div>
               <div class="nav-list-wrapper-right">
                 <li>
-                  <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
-                      width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                    </svg></a>
+                  <div class="shoppingCartOverlay"></div>
+                  <div class="shoppingCart-div">
+                    <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                      </svg></a>
+                  </div>
                 </li>
                 <li>
                   <a class="shpping-cart-textVersion shopping-cart-onTheRight" href="./shopping-cart.html">My Cart</a>
@@ -118,170 +123,44 @@
   <!-- end nav section -->
 
   <!-- description section -->
-  <section id="desc">
+  <section id="title">
     <div class="container">
-      <h1 class="desc-title">Health Wizard Apps</h1>
-      <p class="desc-info">
-        Use them every single day. Keeps your life from fading away.
-      </p>
+      <h1 class="desc-title">Calorie Counter</h1>
     </div>
   </section>
   <!-- end description section -->
 
-  <!-- apps section  -->
-  <section id="apps">
+  <!-- calorie counter section -->
+  <section id="calorie">
     <div class="container">
-      <div class="apps-wrapper">
-        <a href="./apps-bmi-calculator.html" class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
+      <div class="calorie-wrapper calc-wrapper">
+        <div class="calorie-wrapper-left calc-content">
+          <div class="calorie-input calc-input">
+            <label for="calorie-food-item">Food Item:</label>
+            <input type="text" id="calorie-food-item" name="calorie-food-item"><br><br>
           </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">BMI Calculator</h3>
-            <p class="apps-item-info-desc">
-              a simple tool that calculates your body mass index based on your height and weight, providing insight into
-              your overall health status.
-            </p>
-          </div>
-        </a>
+          <div class="calorie-input calc-input">
+            <label for="calorie-calories">Calories:</label>
+            <input type="number" id="calorie-calories" name="calorie-calories"><br><br>
 
-        <a href="./apps-health-video-player.html" class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Health Video Player</h3>
-            <p class="apps-item-info-desc">
-              A video guide to help you live a healthier lifestyle.
-            </p>
-          </div>
-        </a>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Diet Habit Measure</h3>
-            <p class="apps-item-info-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-              aliquam praesentium vitae aperiam beatae sapiente totam nemo.
-            </p>
+            <div id="calculate" class="calorie-addFoodBtn btn btn-primary" type="button" onclick="addFood()">Add Food
+            </div>
           </div>
         </div>
+        <div class="calorie-wrapper-right">
+          <h2>
+            <div class="calarie-foodlogTitle text-center">Today's Food Log</div>
+          </h2>
+          <ul id="calorie-food-list"></ul>
 
-        <a href="./apps-calorie-counter.html" class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Calorie Counter</h3>
-            <p class="apps-item-info-desc">
-              allows you to track your daily food intake and monitor your calorie consumption.
-            </p>
-          </div>
-        </a>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Water Intake Tracker</h3>
-            <p class="apps-item-info-desc">
-              helps you stay hydrated by tracking how much water you drink throughout the day.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Fitness Tracker</h3>
-            <p class="apps-item-info-desc">
-              allows you to track your workouts, set goals, and monitor progress towards those goals.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Meditation App</h3>
-            <p class="apps-item-info-desc">
-              provides guided meditations and breathing exercises to help you reduce stress and anxiety.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Sleep Tracker</h3>
-            <p class="apps-item-info-desc">
-              tracks your sleep patterns and provides insights into sleep quality, helping you improve your sleep
-              habits.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Meal Planner</h3>
-            <p class="apps-item-info-desc">
-              helps you plan healthy meals based on your dietary preferences and nutritional needs.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Symptom Checker</h3>
-            <p class="apps-item-info-desc">
-              allows you to track your workouts, set goals, and monitor progress towards those goals.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Yoga App</h3>
-            <p class="apps-item-info-desc">
-              provides a library of yoga classes and poses to help you improve flexibility, strength, and mindfulness.
-            </p>
-          </div>
-        </div>
-
-        <div class="apps-item">
-          <div class="apps-item-img">
-            <img src="./test-picture.jpg" alt="" />
-          </div>
-          <div class="apps-item-info-wrapper">
-            <h3 class="apps-item-info-title">Mental health App</h3>
-            <p class="apps-item-info-desc">
-              provides resources and support for managing mental health conditions such as depression and anxiety.
-            </p>
-          </div>
+          <div class="calc-result">Total Calories: <span id="calorie-total-calories">0</span></div>
         </div>
       </div>
+      <p class="apps-goBack"><a href="./apps.html">Back to Health Wizard Apps</a></p>
     </div>
   </section>
-  <!-- end apps section -->
+  <!-- end calorie counter section -->
+
 
   <!-- footer -->
   <footer>
@@ -383,8 +262,11 @@
   </footer>
   <!-- end footer -->
 
+  <!-- aos script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- custom script -->
   <script src="./javascript/main.js"></script>
+  <script src="./javascript/calorieCounter.js"></script>
 </body>
 
 </html>

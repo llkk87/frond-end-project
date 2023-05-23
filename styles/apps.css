@@ -105,7 +105,9 @@
   font-family: Poppins;
   font-size: 1.4rem;
   margin-bottom: 2rem;
+  color: var(--black-1);
 }
+
 
 .calc-input input {
   width: 100%;
@@ -207,4 +209,47 @@ p {
 /* health video palyer styles */
 .vidPlayer-wrapper {
   text-align: center;
+}
+
+/* calorie counter styles */
+.calorie-edit,
+.calorie-del {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+  color: var(--green-1);
+}
+
+#calorie-food-list {
+  font-family: Poppins;
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  color: var(--black-1);
+}
+
+#calorie-food-list li {
+  margin-bottom: 1.5rem;
+}
+
+.calorie-addFoodBtn {
+  margin-top: 2rem;
+}
+
+.calarie-foodlogTitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: var(--black-1);
+}
+
+@media only screen and (min-width: 768px) {
+  #calorie-food-list {
+    font-size: 1.6rem;
+    line-height: 1.5em;
+  }
+
+  .calarie-foodlogTitle {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
 }

@@ -2,6 +2,7 @@
 #apps {
   padding-top: 0;
 }
+
 .apps-wrapper {
   display: flex;
   flex-direction: column;
@@ -11,6 +12,7 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
 .apps-item {
   display: flex;
   flex: 1;
@@ -20,17 +22,21 @@
   border-radius: 8px;
   overflow: hidden;
 }
+
 .apps-item-img {
   flex: 1;
   border-radius: 8px;
   overflow: hidden;
 }
+
 .apps-item-img img {
   object-fit: cover;
 }
+
 .apps-item-info-wrapper {
   flex: 1;
 }
+
 .apps-item-info-title {
   font-size: 1.8rem;
   color: var(--green-1);
@@ -38,10 +44,14 @@
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
 .apps-item-info-desc {
+  color: var(--black-1);
+  text-align: left;
   font-size: 1.4rem;
   line-height: 1.6em;
 }
+
 @media only screen and (min-width: 768px) {
   .apps-wrapper {
     /* display: flex;
@@ -50,15 +60,18 @@
     grid-template-columns: 1fr 1fr;
     max-width: none;
   }
+
   .apps-item {
     padding: 3rem;
     gap: 2rem;
     height: 100%;
   }
+
   .apps-item-info-title {
     font-size: 2.8rem;
     gap: 2rem;
   }
+
   .apps-item-info-desc {
     font-size: 2rem;
     line-height: 1.6em;
@@ -69,6 +82,7 @@
 #title {
   padding-bottom: 0;
 }
+
 .calc-wrapper {
   max-width: 600px;
   border-radius: 12px;
@@ -79,17 +93,20 @@
   display: flex;
   flex-direction: column;
 }
+
 .calc-content {
   background-color: var(--lightGreen-1);
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
 }
+
 .calc-input {
   font-family: Poppins;
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
+
 .calc-input input {
   width: 100%;
   border: none;
@@ -102,21 +119,25 @@
   margin-top: 1rem;
   color: var(--black-2);
 }
+
 #calculate {
   text-align: center;
   margin-bottom: 2rem;
 }
+
 #result {
   font-size: 1.6rem;
   font-family: Poppins;
   text-align: center;
 }
+
 p {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.6rem;
 }
+
 .calc-result {
   font-size: 1.6rem;
   line-height: 1em;
@@ -125,38 +146,55 @@ p {
   padding: 1rem;
   text-align: center;
 }
+
+.apps-goBack {
+  margin-top: 5rem;
+}
+
+.apps-goBack a {
+  color: var(--green-1);
+}
+
 @media only screen and (min-width: 768px) {
   .calc-wrapper {
     flex-direction: row;
     max-width: 1200px;
     justify-content: center;
   }
+
   .calc-content {
     padding: 3.5rem;
     margin-right: 5rem;
   }
+
   .calc-input {
     font-size: 2rem;
     margin-bottom: 3rem;
   }
+
   .calc-input input {
     font-size: 2rem;
     padding: 2rem;
   }
+
   #calculate {
     margin-bottom: 3rem;
   }
+
   #result {
     font-size: 3rem;
   }
+
   p {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 2rem;
   }
+
   .calc-chart {
     margin-top: 3rem;
   }
+
   .calc-result {
     font-size: 2.4rem;
   }

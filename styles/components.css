@@ -25,7 +25,7 @@
 
 /* nav styles */
 .nav {
-  padding: 2rem 0;
+  padding: 1.9rem 0;
 }
 .nav-list-wrapper {
   display: flex;
@@ -38,11 +38,10 @@
 .logo-desktop {
   display: inline-block;
   margin-right: 2rem;
-  height: 5rem;
 }
 .logo-mobile img,
 .logo-desktop img {
-  border-radius: 8px;
+  height: 3.7rem;
 }
 .nav-icon,
 .nav-close,
@@ -297,7 +296,7 @@ footer {
   gap: 3rem;
 }
 .footer-logo {
-  width: 150px;
+  width: 100px;
   margin-bottom: 2rem;
 }
 .footer-info {

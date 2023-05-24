@@ -26,7 +26,7 @@ most of the case follow this guide, some of the special cases can omit it.
   max-width: 350px;
 }
 .hero-right {
-  max-width: 400px;
+  max-width: 730px;
   width: 80%;
   margin: 0 auto;
 }
@@ -90,13 +90,11 @@ most of the case follow this guide, some of the special cases can omit it.
     padding-bottom: 90px;
   }
 }
-@media only screen and (max-width: 900px) {
-  .hero__right {
+@media only screen and (max-width: 920px) {
     .hero-right {
       margin-right: 30px;
     }
   }
-}
 
 /* testimonial section styles */
 .testimonial-title {
@@ -117,6 +115,7 @@ most of the case follow this guide, some of the special cases can omit it.
 .testimonial-user-wrapper {
   display: flex;
   flex-direction: column;
+  color: var(--black-2);
 }
 .testimonial-user-icon {
   display: block;
@@ -140,6 +139,8 @@ most of the case follow this guide, some of the special cases can omit it.
 }
 @media only screen and (min-width: 768px) {
   .testimonial-title {
+    color: var(--black-1);
+    text-align: center;
     font-size: 3rem;
     margin-bottom: 4rem;
   }
@@ -167,10 +168,8 @@ most of the case follow this guide, some of the special cases can omit it.
   flex-direction: column;
 }
 .descOne-img {
-  border-radius: 12px;
-  overflow: hidden;
   margin-bottom: 2.5rem;
-  max-width: 400px;
+  max-width: 130px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -197,10 +196,10 @@ most of the case follow this guide, some of the special cases can omit it.
     gap: 1.5rem;
   }
   .descOne-left {
-    flex: 4;
+    flex: 3;
   }
   .descOne-right {
-    flex: 3;
+    flex: 4;
   }
   .descOne-title {
     font-size: 3rem;
@@ -210,7 +209,11 @@ most of the case follow this guide, some of the special cases can omit it.
     font-size: 2rem;
     line-height: 1.6em;
   }
+  .descOne-img {
+    max-width: 220px;
+  }
 }
+
 
 /* our products section styles */
 .ourProducts-wrapper {
@@ -241,11 +244,13 @@ most of the case follow this guide, some of the special cases can omit it.
   background-color: var(--lightGreen-1);
   padding: 1rem;
   border-radius: 8px;
+  flex: 1;
 }
 .ourProducts-item-img {
   border-radius: 8px;
-  overflow: hidden;
+  overflow: clip;
   margin-bottom: 2rem;
+
 }
 .ourProducts-item-img img {
   object-fit: cover;

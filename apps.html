@@ -11,6 +11,17 @@
   <link rel="stylesheet" href="./styles/globalStyles.css" />
   <link rel="stylesheet" href="./styles/components.css" />
   <link rel="stylesheet" href="./styles/apps.css" />
+  <!-- Shopping Cart -->
+  <link rel="stylesheet" href="./styles/cartModal.css">
+  <script src="./json/ProductSeries.js"></script>
+  <script src="./javascript/cart.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", DOMContentLoadedEvent => {
+      productsInit();
+      localStorageInit("Products", products);
+      cartModalInit();
+    });
+  </script>
 </head>
 
 <body>
@@ -84,7 +95,7 @@
               </div>
               <div class="nav-list-wrapper-right">
                 <li>
-                  <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
+                  <a class="shopping-cart shopping-cart-onTheRight" ><svg xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                       stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="9" cy="21" r="1" />
@@ -116,6 +127,18 @@
     </div>
   </div>
   <!-- end nav section -->
+
+  <!-- modal -->
+  <div class="modal hidden">
+    <div class="container">
+      <div class="body" style="color: green; font-size: 16px;">
+        <div class="CartItemList">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
 
   <!-- description section -->
   <section id="desc">

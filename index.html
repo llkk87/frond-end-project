@@ -13,6 +13,89 @@
   <link rel="stylesheet" href="./styles/home.css" />
   <!-- aos css -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Shopping Cart -->
+  <link rel="stylesheet" href="./styles/cartModal.css">
+  <script src="./json/ProductSeries.js"></script>
+  <script src="./javascript/cart.js"></script>
+  <script>
+
+    // listItems Start
+    function listItems(listPosition, data) {
+      let tag = document.getElementById(listPosition);
+
+      for (const [key, value] of Object.entries(OurProducts)) {
+        console.log("value: " + value);
+
+        let div_item = document.createElement("div", "class");
+        div_item.className = "ourProducts-item";
+
+        let div_item_img = document.createElement("div", "class");
+        div_item_img.className = "ourProducts-item-img";
+
+        let img = document.createElement("img");
+        img.setAttribute("src", value['img']);
+
+        div_item_img.append(img);
+
+        let h2_item_title = document.createElement("h2", "class");
+        h2_item_title.className = "ourProducts-item-title";
+        h2_item_title.innerText = value['title'];
+
+        let h3_item_price = document.createElement("h3", "class");
+        h3_item_price.className = "ourProducts-item-price";
+        h3_item_price.innerText = value['price'];
+
+        let div_item_stars = document.createElement("div", "class");
+        div_item_stars.className = "ourProducts-item-stars";
+
+        let stars_img = document.createElement("img");
+        stars_img.setAttribute("src", value['stars']);
+
+        div_item_stars.append(stars_img);
+
+        let div_item_info = document.createElement("div", "class");
+        div_item_info.className = "ourProducts-item-info";
+        div_item_info.innerText = value['info'];
+
+        let div_item_buyBtnWrapper = document.createElement("div", "class");
+        div_item_buyBtnWrapper.className = "ourProducts-item-buyBtnWrapper";
+
+        let div_item_buyBtn = document.createElement("div", "class");
+        div_item_buyBtn.className = "ourProducts-item-buyBtn btn btn-primary";
+        div_item_buyBtn.setAttribute("id", value["id"]);
+        div_item_buyBtn.setAttribute("data-id", value['id']);
+        div_item_buyBtn.innerText = 'buy';
+        div_item_buyBtnWrapper.append(div_item_buyBtn);
+
+        div_item.append(div_item_img);
+        div_item.append(h2_item_title);
+        div_item.append(h3_item_price);
+        div_item.append(div_item_stars);
+        div_item.append(div_item_info);
+        div_item.append(div_item_buyBtnWrapper);
+        tag.append(div_item);
+      }
+    }
+    // listItems End    
+
+
+
+    document.addEventListener("DOMContentLoaded", (DOMContentLoadedEvent) => {
+      productsInit();
+      localStorageInit("Products", products);
+      listItems("OurProducts", OurProducts);
+      cartModalInit();
+
+
+      let buyBtns = document.querySelectorAll('[data-id]');
+      buyBtns.forEach(buyBtn => {
+        buyBtn.addEventListener("click", (buyBtnClickedEvent) => {
+          console.log(buyBtnClickedEvent.target.dataset.id);
+          addItemToCart(buyBtnClickedEvent.target.dataset.id);
+        });
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -55,41 +138,13 @@
                   <a class="nav-link" href="./product.html">Products</a>
                 </li>
                 <li><a class="nav-link" href="./contact.html">Contact</a></li>
-                <!-- <li>
-                    <a class="shopping-cart shopping-cart-onTheLeft" href=""
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <circle cx="9" cy="21" r="1" />
-                        <circle cx="20" cy="21" r="1" />
-                        <path
-                          d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                        /></svg
-                    ></a>
-                  </li>
-                  <li>
-                    <div class="login login-onTheLeft btn btn-primary">
-                      Login
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sign-up sign-up-onTheLeft btn">Sign up</div>
-                  </li> -->
               </div>
               <div class="nav-list-wrapper-right">
                 <li>
                   <div class="shoppingCartOverlay"></div>
                   <div class="shoppingCart-div">
-                    <a class="shopping-cart shopping-cart-onTheRight" href=""><svg xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    <a class="shopping-cart shopping-cart-onTheRight"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="9" cy="21" r="1" />
                         <circle cx="20" cy="21" r="1" />
@@ -122,6 +177,18 @@
   </div>
   <!-- end nav section -->
 
+  <!-- modal -->
+  <div class="modal hidden">
+    <div class="container">
+      <div class="body" style="color: green; font-size: 16px;">
+        <div class="CartItemList">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
+
   <!-- hero section -->
   <section id="hero">
     <div class="container">
@@ -137,7 +204,7 @@
               better life form today.
             </p>
             <div class="button-wrapper">
-              <a href="./apps.html" class="btn btn-primary">Try Now</a>
+              <a href="#" class="btn btn-primary">Try Now</a>
               <a href="#" class="btn">Know More</a>
             </div>
           </div>
@@ -181,19 +248,19 @@
       <div class="descOne-wrapper">
         <div class="descOne-left">
           <div class="descOne-img">
-            <img src="./images/coach.png" alt="" />
+            <img src="./images/coach.png"" alt="" />
           </div>
         </div>
-        <div class="descOne-right">
-          <h2 class="descOne-title">Why Choose our Apps and Products</h2>
-          <p class="descOne-info">
-            Our digital coach will guide you in scientific method and give you
-            detail steps. Using our smartphone and smartwatch app to record
-            your health at anytime, anywhere.
-          </p>
+        <div class=" descOne-right">
+            <h2 class="descOne-title">Why Choose our Apps and Products</h2>
+            <p class="descOne-info">
+              Our digital coach will guide you in scientific method and give you
+              detail steps. Using our smartphone and smartwatch app to record
+              your health at anytime, anywhere.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
   </section>
   <!-- end description one section -->
 
@@ -210,10 +277,11 @@
             <a href="./product.html" class="btn btn-primary">More Products</a>
           </div>
         </div>
-        <div class="ourProducts-right" data-aos="fade-left">
-          <div class="ourProducts-item">
+        <div class="ourProducts-right" data-aos="fade-left" id="OurProducts">
+
+          <!-- <div class="ourProducts-item">
             <div class="ourProducts-item-img">
-              <img src="./images/smartwatch.png" alt="" />
+              <img src="./test-picture.jpg" alt="" />
             </div>
             <h2 class="ourProducts-item-title">Sleep Tracking watch</h2>
             <h3 class="ourProducts-item-price">$1500</h3>
@@ -222,28 +290,31 @@
             </div>
             <p class="ourProducts-item-info">
               Get your sleeping data every night with extremely long battery
-              life.
+              life
             </p>
             <div class="ourProducts-item-buyBtnWrapper">
               <div class="ourProducts-item-buyBtn btn btn-primary">buy</div>
             </div>
           </div>
+
           <div class="ourProducts-item">
             <div class="ourProducts-item-img">
-              <img src="./images/Ultimate-Health-Intake.png" alt="" />
+              <img src="./test-picture.jpg" alt="" />
             </div>
-            <h2 class="ourProducts-item-title">Ultimate Health Intake</h2>
-            <h3 class="ourProducts-item-price">$250</h3>
+            <h2 class="ourProducts-item-title">Sleep Tracking watch</h2>
+            <h3 class="ourProducts-item-price">$1500</h3>
             <div class="ourProducts-item-stars">
               <img src="./3star.png" alt="" />
             </div>
             <p class="ourProducts-item-info">
-              Improve your health instantly and get better sleep quality. Also price is affordable.
+              Get your sleeping data every night with extremely long battery
+              life
             </p>
             <div class="ourProducts-item-buyBtnWrapper">
               <div class="ourProducts-item-buyBtn btn btn-primary">buy</div>
             </div>
-          </div>
+          </div> -->
+
         </div>
       </div>
     </div>
@@ -349,11 +420,11 @@
     </div>
   </footer>
   <!-- end footer -->
-
   <!-- aos script -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- custom script -->
   <script src="./javascript/main.js"></script>
+
 </body>
 
 </html>

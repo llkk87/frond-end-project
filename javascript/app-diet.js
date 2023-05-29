@@ -102,13 +102,14 @@ function result() {
   resultDivEl.style.display = "block";
 
   const scoreEl = document.querySelector(".score");
-
+  scoreEl.innerHTML = null;
   if (totalPoint == "0" || totalPoint == "1") {
     scoreEl.append(" " + totalPoint + " point");
   } else
     scoreEl.append(" " + totalPoint + " points");
 
   const commentEl = document.querySelector(".comment");
+  commentEl.innerHTML = null;
   if (totalPoint <= 12) {
     commentEl.append("0-12 points, miserable! Crap! Your eating behavior is very bad, it is recommended to make up your mind to lose weight.");
   } else if (totalPoint <= 20) {
@@ -223,13 +224,14 @@ function resultPC() {
   resultDivEl.style.display = "block";
 
   const scoreEl = document.querySelector(".score");
-
+  scoreEl.innerHTML = null;
   if (totalPoint == "0" || totalPoint == "1") {
     scoreEl.append(" " + totalPoint + " point");
   } else
     scoreEl.append(" " + totalPoint + " points");
 
   const commentEl = document.querySelector(".comment");
+  commentEl.innerHTML = null;
   if (totalPoint <= 12) {
     commentEl.append("0-12 points, miserable! Crap! Your eating behavior is very bad, it is recommended to make up your mind to lose weight.");
   } else if (totalPoint <= 20) {
